@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    <title>All Contacts</title>
+  </head>
+  <body onload="formTable()">
+    <nav class="navbar navbar-expanded navbar-light bg-light">
+      <ul class="nav nav-pills">
+        <li class="nav-item ">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="admin">Admin</a>
+      </li>
+        <li class="nav-item active">
+          <a class="nav-link active" href="AllContacts">All Contacts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="MyContacts">My Contacts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="AddContact">Add Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Stocks">Stocks</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="logout">Logout</a>
+        </li>
+        
+      </ul>
+      <p id="userName" style="color:blue; text-align:center;font-size: large;padding-top:25px">Welcome</p>
+    </nav>
+  <table id="contactTable" style="width:90%; border:1px solid black;
+    padding:10px;">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Contact Information</th>
+        <th>Email</th>
+        <th>Website</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <script>
+    //displays current user logged in
+    $.get("loginWelcome").done(function(response){
+      document.getElementById("userName").innerHTML = "Welcome " + response + "!";
+    })
+
+    function formTable() { //where to call this?
+      //$('#categorys li a').removeClass("active");
+      //$(element).addClass("active");
+      clearTable(); 
+      //console.log("forming table");
+
+      //what to put in element?
+      //let category = $(element).text().toLowerCase();
+      $.get('getAllContacts', (function(data) { //stores server response in "data"
+         console.log(data);
+         fillTable(data);//.res);
+       })
+      );
+    }
+
+    //takes server's queried data, and updates contactTable with it
+    function fillTable(events) { 
+      events.forEach((data) => {
+        let row = `
+              <tr>
+              <td>${data.contact_category}</td>
+              <td>${data.contact_name}</td>
+              <td>${data.contact_location}</td>
+              <td>${data.contact_info}</td>
+              <td>${data.contact_email}</td>
+              <td><a href="${data.website_url}">${data.website_title}</a></td>
+              </tr>
+        `;
+        $('#contactTable tbody').append(row);//dynamic alters Table html element with server response
+      });
+
+    }
+    function clearTable(){
+      $('#contactTable > tbody').empty();
+    }
+  </script>
+</body>
+</html>

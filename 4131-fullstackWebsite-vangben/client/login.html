@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-
+          BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+          crossorigin="anonymous">
+        </script>
+        <title>Login</title>
+        <style type="text/css">
+          .login { text-align: center; }
+        </style>
+    </head>
+
+    <body>
+      <div class ="login" style ="background: darkseagreen">
+        <br><h1>Login Page</h1>
+        <form id="myForm" name="myForm">
+          <div>
+            <label for="login">Login:</label><br>
+            <input type="text" id="login" name="login" required>
+          </div>
+          <div>
+            <label for="password">Password:</label><br>
+            <input type="text" id="password" name="password" required>
+          </div>
+          <br>
+          <input type="submit" value="Submit">
+        </form><br><br>
+      </div>
+
+        <script>
+          //jquery; send a /login Ajax post request containing loginfo to server
+          $(document).ready(function(){
+            $('#myForm').submit(function (event){ //upon clicking submit...
+              event.preventDefault();
+
+              //collect form data using ID selector and sends to server
+              let login = $('#login').val();
+              let password = $('#password').val();
+              $.post('./login', {"login": login, "password": password}, //TO FIX?: send to /login endpoint in index.js
+                (data) => { //"data" is the JSON response receieved from server
+                  console.log(data); //make sure this is printing out correctly
+                  if (data.status === 'success'){
+
+                    //user accepted, allow access and redirectto AllContacts.html
+                    window.location.href = '/AllContacts'; 
+                  } else {
+                    //display error message
+                    alert("ERROR, incorrect login or password");
+                  }
+                });
+            });
+          });
+        </script>
+    </body>
+</html>
