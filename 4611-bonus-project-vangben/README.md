@@ -4,7 +4,7 @@ Usage:
 1. after git cloning this repo, run "npm install" in your terminal<br/>
 2. then run the program with "npm run start" <br/>
 3. alternatively, you can use this link if you prefer not to clone:<br/>
-https://csci-4611-spring-2022.github.io/bonus-assignment-vangben/<br/>
+https://csci-4611-spring-2022.github.io/bonus-assignment-vangben<br/>
 
 Original Repo: https://github.com/CSCI-4611-Spring-2022/bonus-assignment-vangben<br/>
 
