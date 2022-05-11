@@ -1,6 +1,6 @@
 # Bonus Assignment: Create Your Own Game
 
-Play here!: https://csci-4611-spring-2022.github.io/bonus-assignment-vangben/
+Play here!: https://csci-4611-spring-2022.github.io/bonus-assignment-vangben/<br />
 Original Repo: https://github.com/CSCI-4611-Spring-2022/bonus-assignment-vangben
 
 The purpose of this assignment to apply the graphics concepts you have learned in class to design and implement your own 3D game!  This is an optional bonus assignment that will replace the lowest score on the previous programs *only* if it benefits your grade.
