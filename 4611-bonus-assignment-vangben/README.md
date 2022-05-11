@@ -13,11 +13,11 @@ You should fill out this information before submitting your assignment. Make sur
 
 Name: Benjamin Vang - vang2756
 
-Third Party Assets:
-mud texture - https://www.pinterest.com/pin/173529391882718477/
-bomb skin texture - https://www.pinterest.com/jesseheinitz/material-lighting-bomb/
-sky text font - https://github.com/mrdoob/three.js/blob/master/examples/fonts/helvetiker_bold.typeface.json
-rabbit skin texture - https://depositphotos.com/102828240/stock-photo-rabbit-fur-fur-texture.html
+Third Party Assets:<br />
+mud texture - https://www.pinterest.com/pin/173529391882718477/<br />
+bomb skin texture - https://www.pinterest.com/jesseheinitz/material-lighting-bomb/<br />
+sky text font - https://github.com/mrdoob/three.js/blob/master/examples/fonts/helvetiker_bold.typeface.json<br />
+rabbit skin texture - https://depositphotos.com/102828240/stock-photo-rabbit-fur-fur-texture.html<br />
 
 
 ```
