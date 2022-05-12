@@ -39,12 +39,6 @@ export abstract class GraphicsApp
         window.addEventListener('keydown', (event: KeyboardEvent) => {this.onKeyDown(event)});
         window.addEventListener('keyup', (event: KeyboardEvent) => {this.onKeyUp(event)});
 
-        // allows usage on mobile devices ie. touching screen to draw 3D paths 
-        window.addEventListener('touchstart', (event: TouchEvent) => {this.onTouchStart(event)});
-        window.addEventListener('touchmove', (event: TouchEvent) => {this.onTouchMove(event)});
-        window.addEventListener('touchend', (event: TouchEvent) => {this.onTouchEnd(event)});
-
-
         // Create the default scene object
         this.scene = new THREE.Scene();
 
@@ -113,37 +107,6 @@ export abstract class GraphicsApp
                 window.innerHeight
             );
         }
-    }
-
-    // allows playing game on mobile:
-    onTouchStart(event: TouchEvent): void{
-        const mouseEvent = new MouseEvent('touch', {
-            'button': 0,
-            'clientX': event.touches[0].clientX, 
-            'clientY': event.touches[0].clientY
-        });
-
-        this.onMouseDown(mouseEvent);
-    }
-
-    onTouchMove(event: TouchEvent): void{
-        const mouseEvent = new MouseEvent('touch', {
-            'button': 0,
-            'clientX': event.touches[0].clientX, 
-            'clientY': event.touches[0].clientY
-        });
-
-        this.onMouseMove(mouseEvent);
-    }
-
-    onTouchEnd(event: TouchEvent): void{
-        const mouseEvent = new MouseEvent('touch', {
-            'button': 0,
-            'clientX': event.changedTouches[0].clientX, 
-            'clientY': event.changedTouches[0].clientY
-        });
-
-        this.onMouseUp(mouseEvent);
     }
 
     // Your app should implement these abstract methods
