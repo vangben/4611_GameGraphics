@@ -197,13 +197,12 @@ export class Billboard extends THREE.Object3D
             //intersectObject returns Three.Intersection object array
                 //array[0].point = vec3 point of raycaster intersection with sky 
             const intersection = raycaster.intersectObject(sky)[0].point;
-                //error to fix?: can't use intersectsphere because sky isn't a sphere?
-            //sky.worldToLocal(intersection);
-            //project vertices to the point where 
-            //sky intersects with raycaster
-            this.vertices[i*3] = intersection.x - this.position.x+2;
-            this.vertices[i*3+1] = intersection.y - this.position.y+2;
-            this.vertices[i*3+2] = intersection.z - this.position.z+2;
+                
+            //project vertices to the point where sky intersects with raycaster
+            // move the billboard drawing back in the ray's direction
+            this.vertices[i*3] = intersection.x - raycaster.ray.direction.x;
+            this.vertices[i*3+1] = intersection.y - raycaster.ray.direction.y;
+            this.vertices[i*3+2] = intersection.z - raycaster.ray.direction.z;
         }
 
         //assign the billboard mesh the new vertices

@@ -90,7 +90,7 @@ export class Ground extends THREE.Mesh
         const normVec = difference.cross(upVec); //normVec is ortho to the plane
    
         //const normVec = (new Vector3(camera.position.x,camera.position.y,1)).normalize;
-        var plane = new THREE.Plane().setFromNormalAndCoplanarPoint(normVec,groundStartPoint);
+        var plane = new THREE.Plane().setFromNormalAndCoplanarPoint(normVec.normalize(),groundStartPoint);
             //don't have to initialize plane location because setfromNorm... does that
                 //using 1 point and a normal already
 

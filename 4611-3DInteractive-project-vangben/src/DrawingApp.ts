@@ -308,26 +308,26 @@ export class DrawingApp extends GraphicsApp
     onKeyDown(event: KeyboardEvent): void 
     {
         if(event.key == 'w' || event.key == 'ArrowUp')
-            this.inputVector.y = 1;
+            this.inputVector.y = 3;
         else if(event.key == 's' || event.key == 'ArrowDown')
-            this.inputVector.y = -1;
+            this.inputVector.y = -3;
         else if(event.key == 'a' || event.key == 'ArrowLeft')
-            this.inputVector.x = -1;
+            this.inputVector.x = -3;
         else if(event.key == 'd' || event.key == 'ArrowRight')
-            this.inputVector.x = 1;
+            this.inputVector.x = 3;
     }
 
     // Event handler for keyboard input
     // You don't need to modify this function
     onKeyUp(event: KeyboardEvent): void 
     {
-        if((event.key == 'w' || event.key == 'ArrowUp') && this.inputVector.y == 1)
+        if((event.key == 'w' || event.key == 'ArrowUp') && this.inputVector.y == 3)
             this.inputVector.y = 0;
-        else if((event.key == 's' || event.key == 'ArrowDown') && this.inputVector.y == -1)
+        else if((event.key == 's' || event.key == 'ArrowDown') && this.inputVector.y == -3)
             this.inputVector.y = 0;
-        else if((event.key == 'a' || event.key == 'ArrowLeft')  && this.inputVector.x == -1)
+        else if((event.key == 'a' || event.key == 'ArrowLeft')  && this.inputVector.x == -3)
             this.inputVector.x = 0;
-        else if((event.key == 'd' || event.key == 'ArrowRight')  && this.inputVector.x == 1)
+        else if((event.key == 'd' || event.key == 'ArrowRight')  && this.inputVector.x == 3)
             this.inputVector.x = 0;
     }
 }
