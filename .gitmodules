@@ -1,3 +1,6 @@
 [submodule "bonus-assignment-vangben"]
 	path = bonus-assignment-vangben
 	url = https://github.com/CSCI-4611-Spring-2022/bonus-assignment-vangben.git
+[submodule "lab09_git_3081w_vang2756"]
+	path = lab09_git_3081w_vang2756
+	url = https://github.umn.edu/umn-csci-3081-s22/lab09_git_3081w_vang2756.git
