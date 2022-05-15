@@ -1,5 +1,9 @@
 # Assignment 6: A World Made of Drawings
 
+## Prerequisites
+
+To work with this code, you will first need to install [Node.js](https://nodejs.org/en/).
+
 ## Getting Started: 
 1. after git cloning this repo, run "npm install" in your terminal<br/>
 2. then run the program with "npm run start" <br/>
