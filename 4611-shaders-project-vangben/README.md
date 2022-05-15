@@ -6,7 +6,7 @@
 3. alternatively, you can use this link if you prefer not to clone:<br/>
 https://csci-4611-spring-2022.github.io/assignment-5-vangben<br/>
 
-Original repo: https://github.com/CSCI-4611-Spring-2022/assignment-5-vangben <br/>
+Original course repo: https://github.com/CSCI-4611-Spring-2022/assignment-5-vangben <br/>
 
 GLSL shaders make it possible for us to create some amazing lighting effects in real- time computer graphics. These range from photorealistic lighting to artistically inspired non-photorealistic rendering, as featured in games like *The Legend of Zelda: The Wind Waker* and *Team Fortress 2*. In this assignment, you will implement GLSL shaders that can produce both realistic per-pixel lighting, cartoon shading, and a variety of other effects. You will also implement another shader that adds silhouette edges to complete a cartoon effect.
 
